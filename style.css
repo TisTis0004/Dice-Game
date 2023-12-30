@@ -1,0 +1,105 @@
+body {
+  background-color: #34353e;
+  color: #49c498;
+  display: flex;
+  flex-direction: column;
+  overflow-y: hidden;
+}
+h1 {
+  font-size: 7rem;
+  font-family: "Shrikhand", serif;
+  margin: 1rem 0 2rem;
+  text-align: center;
+  text-shadow: 5px 5px black;
+}
+.container {
+  display: flex;
+  justify-content: space-around;
+  gap: 0.5rem;
+}
+p {
+  text-align: center;
+  margin: 0 0 1rem;
+  font-size: 2.5rem;
+  font-family: Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+    sans-serif;
+}
+.die {
+  width: 250px;
+  height: 250px;
+  border-radius: 30px;
+  background-color: #950113;
+  position: relative;
+  transition: box-shadow 0.2s 0s;
+}
+.die:hover {
+  box-shadow: 6px 6px black;
+}
+.circle {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  position: absolute;
+  margin: 0;
+}
+.circle1 {
+  top: calc(50% - 2rem);
+  left: calc(50% - 2rem);
+  background-color: white;
+}
+.circle2 {
+  top: 1rem;
+  left: 0.9rem;
+  background-color: white;
+}
+.circle3 {
+  top: calc(50% + 3rem);
+  left: calc(50% + 3rem);
+  background-color: white;
+}
+.circle4 {
+  top: calc(50% + 3rem);
+  left: 0.9rem;
+  background-color: white;
+}
+.circle5 {
+  top: 1rem;
+  left: calc(50% + 3rem);
+  background-color: white;
+}
+.circle6 {
+  top: calc(50% - 1.9rem);
+  left: 0.9rem;
+  background-color: white;
+}
+.circle7 {
+  top: calc(50% - 1.9rem);
+  left: calc(50% + 3rem);
+  background-color: white;
+}
+input {
+  background-color: #49c498;
+  color: white;
+  width: 200px;
+  height: 70px;
+  font-size: 2rem;
+  border: 5px solid #1e674d;
+  border-radius: 10px;
+  transition: transform 0.2s 0s, box-shadow 0.2s 0s;
+}
+input:hover {
+  transform: translateY(-5px);
+  box-shadow: 5px 5px black;
+  cursor: pointer;
+}
+input:active {
+  transform: translate(5px);
+  box-shadow: none;
+}
+#btn-container {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  margin-top: 3rem;
+  height: 10rem;
+}
