@@ -3,21 +3,23 @@ body {
   color: #49c498;
   display: flex;
   flex-direction: column;
-  overflow-y: hidden;
 }
 h1 {
-  font-size: 7rem;
+  font-size: 6rem;
   font-family: "Shrikhand", serif;
-  margin: 1rem 0 2rem;
+  margin: 0rem 0 3rem;
   text-align: center;
   text-shadow: 5px 5px black;
+  letter-spacing: 0.5rem;
+  cursor: default;
+  height: 160px;
 }
 .container {
   display: flex;
-  justify-content: space-around;
-  gap: 0.5rem;
+  justify-content: space-evenly;
 }
 p {
+  width: 250px;
   text-align: center;
   margin: 0 0 1rem;
   font-size: 2.5rem;
@@ -28,7 +30,7 @@ p {
   width: 250px;
   height: 250px;
   border-radius: 30px;
-  background-color: #950113;
+  background-color: white;
   position: relative;
   transition: box-shadow 0.2s 0s;
 }
@@ -41,43 +43,44 @@ p {
   border-radius: 50%;
   position: absolute;
   margin: 0;
+  visibility: hidden;
 }
 .circle1 {
   top: calc(50% - 2rem);
   left: calc(50% - 2rem);
-  background-color: white;
+  background-color: black;
 }
 .circle2 {
   top: 1rem;
   left: 0.9rem;
-  background-color: white;
+  background-color: black;
 }
 .circle3 {
   top: calc(50% + 3rem);
   left: calc(50% + 3rem);
-  background-color: white;
+  background-color: black;
 }
 .circle4 {
   top: calc(50% + 3rem);
   left: 0.9rem;
-  background-color: white;
+  background-color: black;
 }
 .circle5 {
   top: 1rem;
   left: calc(50% + 3rem);
-  background-color: white;
+  background-color: black;
 }
 .circle6 {
   top: calc(50% - 1.9rem);
   left: 0.9rem;
-  background-color: white;
+  background-color: black;
 }
 .circle7 {
   top: calc(50% - 1.9rem);
   left: calc(50% + 3rem);
-  background-color: white;
+  background-color: black;
 }
-input {
+#btn-container > input {
   background-color: #49c498;
   color: white;
   width: 200px;
@@ -87,19 +90,274 @@ input {
   border-radius: 10px;
   transition: transform 0.2s 0s, box-shadow 0.2s 0s;
 }
-input:hover {
+#btn-container > input:hover {
   transform: translateY(-5px);
   box-shadow: 5px 5px black;
   cursor: pointer;
 }
-input:active {
+#btn-container > input:active {
   transform: translate(5px);
   box-shadow: none;
 }
 #btn-container {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   margin: 0;
   margin-top: 3rem;
-  height: 10rem;
+  height: 5rem;
+}
+.player {
+  width: 150px;
+  height: 50px;
+  font-size: 1rem;
+  font-weight: 500;
+  font-family: Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+    sans-serif;
+  background-color: #49c498;
+  border: 5px solid #1e674d;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  text-align: center;
+  color: white;
+}
+.player:focus {
+  outline: none;
+}
+.player::placeholder {
+  color: #008484;
+}
+p {
+  font-size: 3.5rem;
+  font-family: "Shrikhand", serif;
+}
+::-webkit-scrollbar {
+  width: 15px;
+}
+::-webkit-scrollbar-track {
+  background: #35edad;
+}
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+/* XS Monitor*/
+@media (max-width: 375px) {
+  h1 {
+    font-size: 1.5rem;
+    margin: 0rem 0 1rem;
+    letter-spacing: 0.2rem;
+    height: 50px;
+  }
+  .container {
+    flex-direction: column;
+  }
+  #btn-container {
+    flex-direction: column;
+    align-items: center;
+    height: 130px;
+    margin-top: 10px;
+  }
+  .player {
+    width: 100px;
+    height: 40px;
+    font-size: 0.8rem;
+    border-width: 3px;
+  }
+  #btn-container > input {
+    width: 100px;
+    height: 35px;
+    font-size: 0.8rem;
+    border-width: 3px;
+  }
+  p {
+    margin: 0 0 1rem;
+    font-size: 1.3rem;
+  }
+}
+/* Mobile */
+
+@media (min-width: 375px) {
+  h1 {
+    font-size: 2rem;
+    margin: 0rem 0 1rem;
+    letter-spacing: 0.2rem;
+    height: 50px;
+  }
+  .container {
+    flex-direction: column;
+  }
+  #btn-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    height: 180px;
+  }
+  .player {
+    width: 150px;
+    height: 50px;
+    font-size: 1rem;
+  }
+  #btn-container > input {
+    width: 150px;
+    height: 50px;
+    font-size: 1rem;
+  }
+  p {
+    margin: 0 0 1rem;
+    font-size: 1.9rem;
+  }
+}
+
+/* Small Screens */
+
+@media (min-width: 768px) {
+  h1 {
+    font-size: 3rem;
+    margin: 0rem 0 1.2rem;
+    letter-spacing: 0.4rem;
+    height: 100px;
+  }
+  .container {
+    flex-direction: column;
+  }
+  #btn-container {
+    flex-direction: row;
+    gap: 5px;
+    height: 210px;
+  }
+  .player {
+    width: 150px;
+    height: 50px;
+    font-size: 1rem;
+  }
+  #btn-container > input {
+    width: 150px;
+    height: 50px;
+    font-size: 1rem;
+  }
+  p {
+    margin: 0 0 1.5rem;
+    font-size: 2.5rem;
+  }
+}
+
+/* Medium Screens */
+
+@media (min-width: 992px) {
+  h1 {
+    font-size: 3.5rem;
+    margin: 0rem 0 1.2rem;
+    letter-spacing: 0.4rem;
+    height: 100px;
+  }
+  .container {
+    flex-direction: row;
+  }
+  #btn-container {
+    align-items: center;
+    gap: 15px;
+    height: 210px;
+  }
+  .player {
+    width: 150px;
+    height: 50px;
+    font-size: 1rem;
+  }
+  #btn-container > input {
+    width: 150px;
+    height: 50px;
+    font-size: 1rem;
+  }
+  p {
+    margin: 0 0 1.5rem;
+    font-size: 2.8rem;
+  }
+}
+
+/* Large Screens */
+
+@media (min-width: 1200px) {
+  h1 {
+    font-size: 4rem;
+    margin: 0rem 0 1.2rem;
+    letter-spacing: 0.5rem;
+    height: 100px;
+  }
+  .container {
+    flex-direction: row;
+  }
+  #btn-container {
+    align-items: center;
+    gap: 15px;
+    height: 210px;
+    margin-top: 3rem;
+  }
+  .player {
+    width: 150px;
+    height: 50px;
+    font-size: 1rem;
+  }
+  #btn-container > input {
+    width: 200px;
+    height: 70px;
+    font-size: 2rem;
+    border-width: 5px;
+  }
+  p {
+    font-size: 3.5rem;
+  }
+}
+
+/*X Large Screens */
+
+@media (min-width: 1400px) {
+  h1 {
+    font-size: 4rem;
+    margin: 0rem 0 1.2rem;
+    letter-spacing: 0.5rem;
+    height: 100px;
+  }
+  .container {
+    flex-direction: row;
+  }
+  #btn-container {
+    align-items: center;
+    gap: 15px;
+    height: 210px;
+    margin-top: 3rem;
+  }
+  .player {
+    width: 150px;
+    height: 50px;
+    font-size: 1rem;
+  }
+  #btn-container > input {
+    width: 200px;
+    height: 70px;
+    font-size: 2rem;
+    border-width: 5px;
+  }
+  p {
+    font-size: 3.5rem;
+  }
+}
+.circle-mode-white {
+  background-color: #fff;
+}
+.circle-mode-black {
+  background-color: #000;
+}
+.background-mode-white {
+  background-color: #fff;
+}
+.background-mode-red {
+  background-color: #950113;
+}
+.background-mode-blue {
+  background-color: #0212e4;
+}
+.background-mode-green {
+  background-color: #098055;
 }

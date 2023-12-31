@@ -12,12 +12,23 @@
       href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap"
       rel="stylesheet"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <h1>The Dice Game</h1>
     <div class="container">
-      <div>
-        <p>Player 1</p>
+      <div style="display: flex; flex-direction: column; align-items: center">
+        <input
+          type="text"
+          value=""
+          placeholder="Enter your Name"
+          class="player"
+        />
         <div class="die die1">
           <div class="circle"></div>
           <div class="circle"></div>
@@ -27,8 +38,26 @@
           <div class="circle"></div>
         </div>
       </div>
-      <div>
-        <p>Player 2</p>
+      <div style="display: flex; flex-direction: column; align-items: center">
+        <p style="color: white; cursor: default">Score</p>
+        <p style="color: white; cursor: default">
+          <span class="score1">0</span> - <span class="score2">0</span>
+        </p>
+      </div>
+      <div
+        style="
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+        "
+      >
+        <input
+          type="text"
+          value=""
+          placeholder="Enter your Name"
+          class="player"
+        />
         <div class="die die2">
           <div class="circle"></div>
           <div class="circle"></div>
@@ -40,7 +69,9 @@
       </div>
     </div>
     <div id="btn-container">
-      <input type="button" value="Play" />
+      <input type="button" value="Color" class="mode-btn" />
+      <input type="button" value="Play" class="play-btn" />
+      <input type="submit" value="Reset" class="reset-btn" />
     </div>
     <script src="script.js"></script>
   </body>
