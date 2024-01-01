@@ -154,24 +154,48 @@ resetBtn.onclick = () => {
   players[1].setAttribute("placeholder", "Enter your Name");
   title.innerText = "The Dice Game";
 };
-let colors = ["white", "red", "blue", "green"],
-  cnt = 0;
+let colors = ["white", "red", "blue", "green"];
+function removeBackgroundColor(color) {
+  for (let i = 0; i < colors.length; i++) {
+    if (colors[i] !== color) {
+      die1.classList.remove(`background-mode-${colors[i]}`);
+      die2.classList.remove(`background-mode-${colors[i]}`);
+    }
+  }
+}
+function addWhiteCircles() {
+  for (let i = 0; i < circles.length; i++) {
+    circles[i].classList.remove("circle-mode-black");
+    circles[i].classList.add("circle-mode-white");
+  }
+}
+let cnt = 1;
 modeBtn.onclick = () => {
-  if (die1.classList.contains(`background-mode-white`))
+  if (cnt === 0) {
+    die1.classList.add(`background-mode-white`);
+    die2.classList.add(`background-mode-white`);
+    removeBackgroundColor("white");
+    removeBackgroundColor();
     for (let i = 0; i < circles.length; i++) {
       circles[i].classList.add("circle-mode-black");
       circles[i].classList.remove("circle-mode-white");
     }
-  else
-    for (let i = 0; i < circles.length; i++) {
-      circles[i].classList.add("circle-mode-white");
-      circles[i].classList.remove("circle-mode-black");
-    }
-  die1.classList.remove(`background-mode-${colors[cnt - 1]}`);
-  die1.classList.toggle(`background-mode-${colors[cnt]}`);
-  if (cnt === colors.length - 1) cnt = 0;
-  else cnt++;
-  die1.classList.toggle(`background-mode-${colors[cnt]}`);
-  // if (cnt !== colors.length - 1)
-  // else cnt = 0;
+  } else if (cnt === 1) {
+    die1.classList.add(`background-mode-red`);
+    die2.classList.add(`background-mode-red`);
+    removeBackgroundColor("red");
+    addWhiteCircles();
+  } else if (cnt === 2) {
+    die1.classList.add(`background-mode-blue`);
+    die2.classList.add(`background-mode-blue`);
+    removeBackgroundColor("blue");
+    addWhiteCircles();
+  } else if (cnt === 3) {
+    die1.classList.add(`background-mode-green`);
+    die2.classList.add(`background-mode-green`);
+    removeBackgroundColor("green");
+    addWhiteCircles();
+  }
+  cnt++;
+  if (cnt === 4) cnt = 0;
 };
