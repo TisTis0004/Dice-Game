@@ -133,8 +133,6 @@ playBtn.onclick = () => {
       score2.innerText = Number(score2.innerText) + 1;
     } else {
       title.innerText = "🤝 DRAW 🤝";
-      score1.innerText = Number(score1.innerText) + 1;
-      score2.innerText = Number(score2.innerText) + 1;
     }
   }
 };

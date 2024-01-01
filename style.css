@@ -17,6 +17,7 @@ h1 {
 .container {
   display: flex;
   justify-content: space-evenly;
+  gap: 50px;
   margin-bottom: -2.5rem;
 }
 p {
